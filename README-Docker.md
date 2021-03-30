@@ -14,6 +14,7 @@ altered with the ``PUID`` and ``PGID`` environment variables.
 ```
 $ docker pull syncthing/syncthing
 $ docker run -p 8384:8384 -p 22000:22000/tcp -p 22000:22000/udp \
+    --sysctl net.core.rmem_max=2097152 \
     -v /wherever/st-sync:/var/syncthing \
     syncthing/syncthing:latest
 ```
